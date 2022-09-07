@@ -4,3 +4,4 @@ Rob 3 projekt,dette er relevante fil til projektet/git
 - hej fra Asbjørn L(o_oL)
 Ok Jakob
 - fedt;) Emil
+Halløjsa - Mads
