@@ -29,7 +29,7 @@ while True:
     # normilise and smuding
     for channel in range(ka):
         recording[:, channel] = np.interp(recording[:, channel], (recording[:, channel].min(), recording[:, channel].max()), (0, 1))
-        kernel_size = 1
+        kernel_size = 3
         kernel = np.ones(kernel_size) / kernel_size
         recording[:, channel] = np.convolve(recording[:, channel], kernel, mode='same')
     
@@ -37,9 +37,11 @@ while True:
     for i in range(vinkel_afsnit):
         v = i*(2*math.pi/vinkel_afsnit)
         rol = [0,0,0,0]
+
         for j in range(ka):
             tid = (math.sin(v+j*math.pi/2)+1)*afstan/(speed_sound)
             rol[j] = int(tid*samplerat);
+
         mid_spor = [0,0,0,0];
         for j in range(ka):
             mid_spor[-j] = recording[:,j].copy()
